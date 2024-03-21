@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="mx-auto mt-5 border col-5">
+            <form [formGroup]="addPostForm" (submit)="handleAddPost()">
+                <div class="mb-3 form-group">
+                    <label for="title" class="form-label">title</label>
+                    <input type="title" formControlName="title" class="form-control" id="title"
+                        placeholder="Enter title">
+                    <div
+                        *ngIf="addPostForm.get('title')?.invalid && (addPostForm.get('title')?.touched || addPostForm.get('title')?.dirty )">
+                        <small class="text-danger" *ngIf="addPostForm.get('title')?.hasError('required')">Name is
+                            required.</small>
+                        <small class="text-danger" *ngIf="addPostForm.get('title')?.hasError('minlength')">Min 10
+                            character </small>
+                        <small class="text-danger" *ngIf="addPostForm.get('title')?.hasError('pattern')">No Special
+                            character </small>
+
+                    </div>
+                </div>
+
+
+                <div class="mb-3 form-group">
+                    <label for="exampleFormControlInput1" class="form-label">body</label>
+                    <input type="body" formControlName="body" class="form-control" id="title" placeholder="Enter body">
+                    <div
+                        *ngIf="addPostForm.get('body')?.invalid && (addPostForm.get('body')?.touched || addPostForm.get('body')?.dirty )">
+                        <small class="text-danger" *ngIf="addPostForm.get('body')?.hasError('required')">Name is
+                            required.</small>
+                        <small class="text-danger" *ngIf="addPostForm.get('body')?.hasError('maxLength')">Max 500
+                            character </small>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="addPostForm.invalid" class="btn btn-primary">Add Post</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- <div class="container">
+
+    <div class="card-container"
+        style="display: flex; align-content: center; justify-content: center; flex-wrap: wrap; gap: 2%;">
+        <div class="card"
+            style="width: 18rem; margin-top: 5%;cursor: pointer;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.365);"
+            *ngFor="let post of allPost.slice(0,10)">
+            <img src="https://via.placeholder.com/600/771796" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{post.title.slice(0,20)}}...</h5>
+                <p class="card-text">{{post.body.slice(0,100)}}...</p>
+                <a (click)="navigateToDetail(post.id)" class="btn btn-primary">Go Details</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="gap-2 row">
+        <div class="card col-5"
+        style="width: 18rem; margin-top: 5%;cursor: pointer;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.365);"
+        *ngFor="let post of allPost.slice(0,10); trackBy: postTrackBy">
+        <img src="https://via.placeholder.com/600/771796" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{post.title.slice(0,20)}}...</h5>
+            <p class="card-text">{{post.body.slice(0,100)}}...</p>
+            <a (click)="navigateToDetail(post.id)" class="btn btn-primary">Go Details</a>
+        </div>
+    </div>
+    </div>
+</div>

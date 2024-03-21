@@ -1,0 +1,9 @@
+<!-- As a heading -->
+  <nav class="bg-light navbar navbar-light">
+    <div class="container">
+      <span class="mb-0 h1 navbar-brand">Posts</span>
+      <button *ngIf="userIsRegister" class="btn btn-success" (click)="navigateToAllPost()">All Posts</button>
+      <button *ngIf="userIsRegister" class="btn btn-primary"  (click)="navigateToAddPost()" >AddPost</button>
+      <button *ngIf="userIsRegister" class="btn btn-danger" (click)="handleLogout()">Logout</button>
+    </div>
+  </nav>
